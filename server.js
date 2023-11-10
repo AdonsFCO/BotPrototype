@@ -8,7 +8,7 @@ app.post("/comment", (req, res) => {
   let info = req.body;
   console.log("New information has been added", info);
 
-  if(info.ticket === "GBH2-1")
+  if(info.ticket === "gbh2-1")
   {
       res.status(200).send('Información recibida ' + JSON.stringify(info));
    }
@@ -16,7 +16,7 @@ app.post("/comment", (req, res) => {
 
 
 });
-
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log("Main server is running on port 3000");
 });
