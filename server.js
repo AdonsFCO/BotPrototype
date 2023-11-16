@@ -7,14 +7,8 @@ app.use(bodyParser.json());
 app.post("/comment", (req, res) => {
   let info = req.body;
   console.log("New information has been added", info);
-
-  if(info.ticket === "gbh2-1")
-  {
-      res.status(200).send('Información recibida ' + JSON.stringify(info));
-   }
-   else {res.status(200).send('This is not one of our tickets sorry')}  
-
-
+  res.status(200).send('Información recibida ' + JSON.stringify(info));
+   
 });
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
